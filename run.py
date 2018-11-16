@@ -35,6 +35,10 @@ def user():
     Returns the user template and sends through the username
     and online_users list
     """
+    
+    if "username" not in session:
+        return redirect("/")
+    
     return render_template("user.html", users=online_users, username=session["username"])
 
 @app.route("/logout")
