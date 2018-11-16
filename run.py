@@ -44,8 +44,9 @@ def logout():
     and pops (or removes) it. Then clears the session, so that
     the username is deleted from the browser.
     """
-    online_users.pop(online_users.index(session["username"]))
+    username = session["username"]
     session.clear()
+    online_users.pop(online_users.index(username))
     return redirect("/")
     
 if __name__ == "__main__":
