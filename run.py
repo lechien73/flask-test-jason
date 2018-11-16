@@ -46,7 +46,8 @@ def logout():
     """
     username = session["username"]
     session.clear()
-    online_users.pop(online_users.index(username))
+    if username in online_users:
+        online_users.pop(online_users.index(username))
     return redirect("/")
     
 if __name__ == "__main__":
