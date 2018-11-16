@@ -23,7 +23,7 @@ def index():
     
     if "username" in session:
         if session["username"] not in online_users:
-            online_users.append(request.form["username"])
+            online_users.append(session["username"])
         
         return redirect("/user")
     
